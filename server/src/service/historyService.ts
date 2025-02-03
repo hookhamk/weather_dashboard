@@ -1,5 +1,9 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const history = path.join(__dirname, 'searchHistory.json');
 
 class City{
@@ -18,10 +22,10 @@ class HistoryService {
   // Reads from the searchHistory.json file
   private async read(): Promise<City[]> {
     try {
-      const data = await fs.readFileSync(history, 'utf-8');
+      const data = await fs.promises.readFile(history, 'utf-8');
       return JSON.parse(data) as City[];
   } catch (err) {
-    if ((err as NodeJS.ErrnoException).code === 'EN0ENT') {
+    if ((err as NodeJS.ErrnoException).code === 'ENOENT') {
       await fs.promises.writeFile(history, JSON.stringify([]));
       return [];
     }
