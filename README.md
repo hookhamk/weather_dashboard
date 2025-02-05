@@ -10,7 +10,7 @@ Updated web application that was provided by edX Boot Camps LLC. to include 5 da
 - [License](#license)
 
 ## Installation
-No installation required, this is a web based application. Simply visit [Live App]((https://weather-dashboard-9rmq.onrender.com)) and follow the prompts.
+No installation required, this is a web based application. Simply visit [Live App](https://weather-dashboard-9rmq.onrender.com) and follow the prompts.
 
 ## Usage
 The best way to use this project is through your web browser. By answering the questions, the browser will return the 5 day forcast based on the openweather api.
