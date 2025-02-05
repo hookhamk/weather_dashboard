@@ -10,7 +10,7 @@ const router = Router();
 const app = express();
 
 // GET route for the home page
-app.get('*', (_req, res) => {
+app.get('/', (_req, res) => {
     res.sendFile(path.join(__dirname, '../../../client/dist/index.html'));
   });
 
